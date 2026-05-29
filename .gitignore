@@ -1,0 +1,6 @@
+practice_rag.py
+.env
+venv/
+.vscode/
+db/
+.DS_Store
