@@ -1,5 +1,6 @@
 import os
 from langchain_community.document_loaders import TextLoader, DirectoryLoader
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
@@ -67,7 +68,7 @@ def create_vector_store(chunks, persist_directory="db/chroma_db"):
     """Create and persist ChromaDB vector store"""
     print("Creating embeddings and storing in ChromaDB...")
         
-    embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
+    embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     
     # Create ChromaDB vector store
     print("--- Creating vector store ---")
@@ -94,7 +95,7 @@ def main():
     if os.path.exists(persistent_directory):
         print("✅ Vector store already exists. No need to re-process documents.")
         
-        embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
+        embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         vectorstore = Chroma(
             persist_directory=persistent_directory,
             embedding_function=embedding_model, 

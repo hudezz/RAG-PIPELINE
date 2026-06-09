@@ -4,3 +4,6 @@ venv/
 .vscode/
 db/
 .DS_Store
+venv/
+db/
+.DS_Store
