@@ -1,0 +1,20 @@
+# Core pipeline
+langchain
+langchain-community
+langchain-text-splitters
+langchain-chroma
+chromadb
+
+# Local embeddings (no API key, runs on this machine)
+langchain-huggingface
+sentence-transformers
+
+# PDF loading, for the files in docs/
+pypdf
+
+# Generation. Ollama is the default and is free/local; langchain-openai is
+# only needed if you set OPENAI_API_KEY.
+langchain-ollama
+langchain-openai
+
+python-dotenv
