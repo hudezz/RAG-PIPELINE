@@ -1,9 +1,19 @@
+# Local experiments
 practice_rag.py
+
+# Secrets
 .env
+
+# Virtualenvs
 venv/
+.venv/
+
+# The vector store is built from docs/, so it is not worth committing
+db/
+
+# Editors and OS cruft
 .vscode/
-db/
+.idea/
 .DS_Store
-venv/
-db/
-.DS_Store
+__pycache__/
+*.pyc
